@@ -1,1 +1,14 @@
-<p>top-data-cards works!</p>
+<div class="top-cards container-fluid d-flex flex-wrap align-items-center justify-content-between">
+    <div class="top-card text-white me-4" *ngFor="let card of topCards;">
+        <div class="top-card-body d-flex justify-content-between p-3">
+            <div class="top-card-text">
+                <h2>{{ card.sub_header.split(' ')[0] }}</h2>
+                <p class="m-0">{{ card.header }}</p>
+                <p class="m-0"><small>Some text here</small></p>
+            </div>
+            <div class="top-card-icon">
+                <i class="fa fa-rotate fa-xl text-white"></i>
+            </div>
+        </div>
+    </div>
+</div>

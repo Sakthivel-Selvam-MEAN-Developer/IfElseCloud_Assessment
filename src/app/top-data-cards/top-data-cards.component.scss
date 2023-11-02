@@ -1,0 +1,30 @@
+.top-cards > * {
+    flex: 1;
+}
+.top-card:first-child{
+    background-color: #506de2;
+}
+.top-card:first-child p:last-child{
+    color: rgba(255, 255, 255, 0.577);
+}
+.top-card{
+    border-radius: 2px;
+}
+.top-card:not(:first-child){
+    background-color: white;
+}
+.top-card:not(:first-child) p{
+    color: black !important;
+}
+.top-card:not(:first-child) i{
+    color: rgba(128, 128, 128, 0.631) !important;
+}
+.top-card:not(:first-child) p:last-child{
+    color: rgba(0, 0, 0, 0.496) !important;
+}
+.top-card:not(:first-child) h2{
+    color: #506de2;
+}
+.top-card:last-child{
+    margin-right: 0 !important;
+}
