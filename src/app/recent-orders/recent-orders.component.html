@@ -1,1 +1,33 @@
-<p>recent-orders works!</p>
+<div class="d-flex flex-column container-fluid recent-products bg-white pt-2">
+    <h6>Recent orders</h6>
+    <table class="table text-center">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Cunstomer</th>
+            <th scope="col">Products</th>
+            <th scope="col">Delivery Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Tracking No#</th>
+            <th scope="col">Shipping</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let products of recentProducts;let i = index;" class=" text-secondary">
+            <td scope="row">0{{i+1}}</td>
+            <td>{{products.name}}</td>
+            <td>{{products.product}}</td>
+            <td>{{products.delivery_date | date}}</td>
+            <td> <span class="badge" [ngClass]="{
+                'bg-primary': products.status === 'Paid',
+                'bg-secondary': products.status === 'Pending',
+                'bg-danger': products.status === 'Failed'
+              }">{{products.status}}</span> </td>
+            <td>#{{products.tracking_no}}</td>
+            <td>{{products.shipping == 'true' ? 'Yes' : 'No'}}</td>
+            <td><i class="fa fa-x fa-xs"></i></td>
+          </tr>
+        </tbody>
+      </table>
+</div>

@@ -1,0 +1,18 @@
+.recent-products{
+    max-height: 400px;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar {
+    width: 0px;
+}
+table th:first-child,
+table th:last-child,
+table tr td:first-child,
+table tr td:last-child{
+    padding: 0 30px;
+    vertical-align: middle;
+}
+table{
+    width: 60vw;
+    font-size: 13px;
+}

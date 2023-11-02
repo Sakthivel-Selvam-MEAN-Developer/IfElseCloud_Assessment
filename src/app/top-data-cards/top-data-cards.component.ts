@@ -19,7 +19,5 @@ export class TopDataCardsComponent implements OnInit{
         this.topCards = this.data.top_cards;
       });
     }, 100);
-
-    
   }
 }

@@ -9,6 +9,7 @@ import { NewUsersComponent } from './new-users/new-users.component';
 import { RecentOrdersComponent } from './recent-orders/recent-orders.component';
 import { GraphsComponent } from './graphs/graphs.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    HighchartsChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
