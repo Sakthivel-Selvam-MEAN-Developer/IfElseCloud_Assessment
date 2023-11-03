@@ -25,9 +25,43 @@
                 'bg-danger': products.status === 'Failed'
               }">{{products.status}}</span> </td>
             <td>#{{products.tracking_no}}</td>
-            <td>{{products.shipping == 'true' ? 'Yes' : 'No'}}</td>
-            <td><i class="fa fa-x fa-xs"></i></td>
+            <td>{{products.shipping == true ? 'Yes' : 'No'}}</td>
+            <td><i class="fa fa-x fa-xs" (click)="setRecentOrder(i)" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></td>
           </tr>
         </tbody>
       </table>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Product Details</h5>
+        <i class="close fa fa-x" data-bs-dismiss="modal" aria-label="Close">
+        </i>
+      </div>
+      <div class="modal-body">
+          <div class="recent-order-card">
+            <div class="recent-order-title mt-1 mb-1">
+              <h4>{{ recentOrderData?.name }}</h4>
+            </div>
+            <div class="recent-order-product d-flex align-items-center justify-content-start mt-3 mb-3">
+              <p class="m-0 me-5">{{ recentOrderData?.product }}</p>
+              <p class="m-0">{{ recentOrderData?.delivery_date | date}}</p>
+            </div>
+            <div class="recent-order-status d-flex align-items-center justify-content-start mt-3 mb-3">
+              <span class="badge me-5" [ngClass]="{
+                'bg-primary': recentOrderData?.status === 'Paid',
+                'bg-secondary': recentOrderData?.status === 'Pending',
+                'bg-danger': recentOrderData?.status === 'Failed'
+              }">{{recentOrderData?.status}}</span>
+              <p class="m-0">#{{recentOrderData?.tracking_no}}</p>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>

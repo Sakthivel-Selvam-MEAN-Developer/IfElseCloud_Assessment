@@ -9,6 +9,8 @@ import { ServiceService } from '../service/service.service';
 export class RecentOrdersComponent implements OnInit{
   recentProducts: any;
   data : any;
+
+  recentOrderData : any;
   
   constructor(private service: ServiceService) {}
 
@@ -19,5 +21,9 @@ export class RecentOrdersComponent implements OnInit{
         this.recentProducts = this.data.recent_orders;
       });
     }, 100);
+  }
+
+  setRecentOrder(index : any){
+    this.recentOrderData = this.recentProducts[index];
   }
 }

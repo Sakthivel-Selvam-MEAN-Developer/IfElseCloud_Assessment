@@ -8,14 +8,15 @@ import { ServiceService } from '../service/service.service';
 })
 export class NewUsersComponent implements OnInit{
   data: any;
-  topCards: any;
+  newUsers: any;
+  
   constructor(private service: ServiceService){}
 
   ngOnInit(){
     setTimeout(() => {
       this.service.getData().subscribe((response) => {
         this.data = response;
-        this.topCards = this.data.recent_orders;
+        this.newUsers = this.data.new_users;
       });
     }, 100);
   }

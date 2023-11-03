@@ -1,0 +1,11 @@
+.new-users{
+    max-height: 400px;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+
+.bg-green{
+    background-color: rgb(1, 235, 1);
+}
